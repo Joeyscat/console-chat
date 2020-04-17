@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fun.oook.webchat.mapper.ChatMessageMapper">
+
+    <resultMap id="chatMessageMap" type="ChatMessage">
+        <id property="id" column="id"/>
+        <result property="username" column="user_name"/>
+        <result property="content" column="content"/>
+        <result property="date" column="created_date"/>
+        <result property="msgType" column="msg_type"/>
+    </resultMap>
+
+    <insert id="createChatMsg">
+         insert into "CHAT_MESSAGE" (ID, USER_NAME, CONTENT, CREATED_DATE, MSG_TYPE) values (
+	    	#{id}, #{username}, #{content}, #{date}, #{msgType}
+	    )
+    </insert>
+
+    <select id="selectChatMsgList" resultMap="chatMessageMap">
+        select * from "CHAT_MESSAGE";
+    </select>
+
+    <select id="selectChatMsg" parameterType="java.lang.Long" resultMap="chatMessageMap">
+        select * from "CHAT_MESSAGE" where id = #{id};
+    </select>
+</mapper>
