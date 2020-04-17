@@ -1,4 +1,4 @@
-package fun.oook.joey.webchat.model;
+package fun.oook.webchat.model;
 
 import lombok.Data;
 

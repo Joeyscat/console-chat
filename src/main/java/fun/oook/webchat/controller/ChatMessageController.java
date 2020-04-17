@@ -1,6 +1,6 @@
-package fun.oook.joey.webchat.controller;
+package fun.oook.webchat.controller;
 
-import fun.oook.joey.webchat.model.ChatMessage;
+import fun.oook.webchat.model.ChatMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;

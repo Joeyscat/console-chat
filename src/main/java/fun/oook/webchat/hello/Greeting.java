@@ -1,4 +1,4 @@
-package fun.oook.joey.webchat.hello;
+package fun.oook.webchat.hello;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

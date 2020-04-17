@@ -1,4 +1,4 @@
-package fun.oook.joey.webchat;
+package fun.oook.webchat;
 
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.Test;

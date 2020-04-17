@@ -1,4 +1,4 @@
-package fun.oook.joey.webchat.controller;
+package fun.oook.webchat.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

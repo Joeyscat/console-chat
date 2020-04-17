@@ -1,4 +1,4 @@
-package fun.oook.joey.webchat.controller;
+package fun.oook.webchat.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

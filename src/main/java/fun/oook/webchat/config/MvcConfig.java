@@ -1,4 +1,4 @@
-package fun.oook.joey.webchat.config;
+package fun.oook.webchat.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;

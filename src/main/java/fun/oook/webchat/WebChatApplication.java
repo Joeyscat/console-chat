@@ -1,4 +1,4 @@
-package fun.oook.joey.webchat;
+package fun.oook.webchat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package fun.oook.joey.webchat.hello;
+package fun.oook.webchat.hello;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.handler.annotation.MessageMapping;
