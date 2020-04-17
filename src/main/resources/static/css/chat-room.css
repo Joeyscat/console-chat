@@ -1,0 +1,78 @@
+body {
+    background-color: #80bb6c;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Lucida Console", Menlo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+#content {
+    height: 460px;
+    background-color: black;
+    color: white;
+    font-size: 23px;
+    font-family: Menlo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    flex-direction: column;
+    display: flex;
+    overflow-y: scroll;
+
+}
+
+#content, #text-area {
+    width: 60%;
+    border-radius: 16px;
+    /*padding: 12px;*/
+
+}
+
+#editor {
+    width: 100%;
+}
+
+#editor, #info {
+    border-radius: 16px;
+    font-size: 20px;
+    font-family: "Lucida Console", Menlo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#info {
+
+}
+
+input {
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: "Lucida Console", Menlo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background-color: #17ff8c;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: #ff717e;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+
+ul {
+    list-style-type: none;
+    /*padding: 10px;*/
+}
+
+li {
+    /*margin: 10px;*/
+    width: 100%;
+}

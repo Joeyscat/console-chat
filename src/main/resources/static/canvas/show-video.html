@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show video</title>
+</head>
+<body>
+<video id="v" controls loop width="400" src="/static/video/Rich Chinese Girl with Model's Body getting Fucked in the Hotel - Pornhub.com.mp4"></video>
+
+<canvas id="c"></canvas>
+<script type="text/javascript">
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const v = document.querySelector('#v');
+        const canvas = document.querySelector('#c');
+        const ctx = canvas.getContext('2d');
+
+        v.addEventListener('loadedmetadata', function () {
+            canvas.width = this.videoWidth;
+            canvas.height = this.videoHeight;
+        });
+
+        const draw = function () {
+            canvas.getContext('2d').drawImage(v, 0, 0);
+            requestAnimationFrame(draw);
+        };
+
+        v.addEventListener('play', function () {
+            if (v.paused || v.ended) return;
+            draw();
+        })
+    })
+</script>
+</body>
+</html>

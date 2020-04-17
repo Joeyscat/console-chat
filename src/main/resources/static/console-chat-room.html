@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Chat Room</title>
+    <link rel="stylesheet" href="css/chat-room.css">
+    <!--    <script type="text/javascript" src="js/chat-room.js"></script>-->
+    <!--    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--    <link href="/main.css" rel="stylesheet">-->
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<div id="content" class="chat-box">
+    <ul id="ul-chat">
+
+        <!--   <li>
+               <img style="border-radius: 20px; vertical-align: middle;" src="http://placehold.it/40x40">
+               <span style="margin-left: 10px;">Barack Obama</span>
+           </li>-->
+    </ul>
+
+</div>
+
+<div id="text-area">
+    <br>
+    <label for="editor"><textarea name="editor" id="editor" rows="3" autofocus placeholder="Let's talk about ..."
+                                  maxlength="5000"></textarea></label>
+</div>
+
+<div id="info">
+    <div id="div-username">
+        <label for="username">your name:<input type="text" id="username"></label>
+    </div>
+</div>
+
+</body>
+</html>
