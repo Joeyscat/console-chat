@@ -48,7 +48,8 @@ $(function () {
 
     // 监听 用户输入，但用户按下回车键 立即向服务器发送消息
     const input = document.getElementById("editor");
-    input.oninput = function () {
+    input.oninput = function (e) {
+        console.log(e);
         if (input.value.indexOf('\n') > 0) {
             console.log("输入了回车键，发送消息");
             const word = input.value.substring(0, input.value.length - 1);

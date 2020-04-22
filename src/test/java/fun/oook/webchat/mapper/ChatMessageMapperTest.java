@@ -33,7 +33,6 @@ class ChatMessageMapperTest {
     @AfterEach
     void tearDown() {
         if (session != null) {
-            session.commit();
             session.close();
         }
     }
@@ -50,6 +49,8 @@ class ChatMessageMapperTest {
         final int insert = mapper.createChatMsg(msg);
         System.out.println(insert);
         Assertions.assertEquals(1, insert);
+
+        session.commit();
     }
 
     @Test
