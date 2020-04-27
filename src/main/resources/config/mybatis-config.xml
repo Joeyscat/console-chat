@@ -25,6 +25,8 @@
     </environments>
     <mappers>
         <mapper resource="config/mapper/ChatMessageMapper.xml"/>
+        <mapper resource="config/mapper/UserInfoMapper.xml"/>
+        <mapper resource="config/mapper/UserPassMapper.xml"/>
         <!--        <package name="fun.oook.webchat.mapper"/>-->
     </mappers>
 </configuration>

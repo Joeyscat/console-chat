@@ -1,23 +1,26 @@
 package fun.oook.webchat.model;
 
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * @author ZhouYu
+ */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ChatMessage {
+public class UserInfo {
     private Long id;
 
-    private Long userId;
+    private String userCode;
 
-    private String content;
+    private String nickname;
 
-    private Date createdDate;
+    private String email;
 
-    private Integer msgType;
+    private String avatar;
+
 }

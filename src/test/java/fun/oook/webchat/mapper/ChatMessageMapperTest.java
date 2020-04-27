@@ -41,12 +41,12 @@ class ChatMessageMapperTest {
     void createChatMsg() {
         final ChatMessage msg = ChatMessage.builder()
                 .id(System.currentTimeMillis())
-                .username("Joey")
+                .userId(1L)
                 .content("Hello")
-                .date(new Date())
+                .createdDate(new Date())
                 .msgType(1)
                 .build();
-        final int insert = mapper.createChatMsg(msg);
+        final int insert = mapper.insert(msg);
         System.out.println(insert);
         Assertions.assertEquals(1, insert);
 
@@ -55,7 +55,7 @@ class ChatMessageMapperTest {
 
     @Test
     void selectChatMsgList() {
-        final List<ChatMessage> chatMessages = mapper.selectChatMsgList();
+        final List<ChatMessage> chatMessages = mapper.selectAll();
         Assertions.assertNotNull(chatMessages);
 //        chatMessages.forEach(System.out::println);
     }
@@ -63,11 +63,11 @@ class ChatMessageMapperTest {
 
     @Test
     void selectChatMsg() {
-        final List<ChatMessage> chatMessages = mapper.selectChatMsgList();
+        final List<ChatMessage> chatMessages = mapper.selectAll();
         Assertions.assertNotNull(chatMessages);
 
         final long id = chatMessages.get(0).getId();
-        final ChatMessage message = mapper.selectChatMsg(id);
+        final ChatMessage message = mapper.selectByPrimaryKey(id);
         System.out.println(message);
         Assertions.assertNotNull(message);
     }

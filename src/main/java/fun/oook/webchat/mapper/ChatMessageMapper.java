@@ -1,20 +1,21 @@
 package fun.oook.webchat.mapper;
 
 import fun.oook.webchat.model.ChatMessage;
+import org.apache.ibatis.annotations.Mapper;import java.util.List;
 
-import java.util.List;
-
-/**
- * @author ZhouYu
- * @version 1.0.0
- * @since 2020/4/17 12:10
- */
+@Mapper
 public interface ChatMessageMapper {
+    int deleteByPrimaryKey(Long id);
 
-    int createChatMsg(ChatMessage chatMessage);
+    int insert(ChatMessage record);
 
-    ChatMessage selectChatMsg(long id);
+    int insertSelective(ChatMessage record);
 
-    List<ChatMessage> selectChatMsgList();
+    ChatMessage selectByPrimaryKey(Long id);
 
+    List<ChatMessage> selectAll();
+
+    int updateByPrimaryKeySelective(ChatMessage record);
+
+    int updateByPrimaryKey(ChatMessage record);
 }
