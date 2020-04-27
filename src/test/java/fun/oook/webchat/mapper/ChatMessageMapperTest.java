@@ -1,47 +1,26 @@
 package fun.oook.webchat.mapper;
 
 import fun.oook.webchat.model.ChatMessage;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.junit.jupiter.api.AfterEach;
+import fun.oook.webchat.util.IdUtils;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import java.io.IOException;
-import java.io.InputStream;
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
+@SpringBootTest
 class ChatMessageMapperTest {
 
-    private SqlSession session;
+    @Resource
     private ChatMessageMapper mapper;
-
-    @BeforeEach
-    void setUp() throws IOException {
-        final String resource = "config/mybatis-config.xml";
-        final InputStream input = Resources.getResourceAsStream(resource);
-        final SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(input);
-        session = sessionFactory.openSession();
-        mapper = session.getMapper(ChatMessageMapper.class);
-
-    }
-
-    @AfterEach
-    void tearDown() {
-        if (session != null) {
-            session.close();
-        }
-    }
 
     @Test
     void createChatMsg() {
         final ChatMessage msg = ChatMessage.builder()
-                .id(System.currentTimeMillis())
-                .userId(1L)
+                .id(Long.valueOf(IdUtils.longNumericId()))
+                .userId(Long.valueOf(IdUtils.longNumericId()))
                 .content("Hello")
                 .createdDate(new Date())
                 .msgType(1)
@@ -49,8 +28,6 @@ class ChatMessageMapperTest {
         final int insert = mapper.insert(msg);
         System.out.println(insert);
         Assertions.assertEquals(1, insert);
-
-        session.commit();
     }
 
     @Test

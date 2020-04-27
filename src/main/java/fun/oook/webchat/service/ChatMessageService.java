@@ -1,9 +1,10 @@
 package fun.oook.webchat.service;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import fun.oook.webchat.model.ChatMessage;
 import fun.oook.webchat.mapper.ChatMessageMapper;
+import fun.oook.webchat.model.ChatMessage;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 @Service
 public class ChatMessageService {

@@ -4,41 +4,26 @@ import com.github.javafaker.Faker;
 import fun.oook.webchat.model.UserInfo;
 import fun.oook.webchat.util.IdUtils;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import java.io.IOException;
-import java.io.InputStream;
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+@SpringBootTest
 class UserInfoMapperTest {
-    private SqlSession session;
+
+    @Resource
     private UserInfoMapper mapper;
     private Faker faker;
 
     @BeforeEach
-    void setUp() throws IOException {
-        final String resource = "config/mybatis-config.xml";
-        final InputStream input = Resources.getResourceAsStream(resource);
-        final SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(input);
-        session = sessionFactory.openSession();
-        mapper = session.getMapper(UserInfoMapper.class);
+    void setUp() {
         faker = new Faker(Locale.CHINA);
-    }
-
-    @AfterEach
-    void tearDown() {
-        if (session != null) {
-            session.close();
-        }
     }
 
 
@@ -60,16 +45,12 @@ class UserInfoMapperTest {
     void insert() {
         final UserInfo record = fakeUserInfo();
         mapper.insert(record);
-
-        session.commit();
     }
 
     @Test
     void insertSelective() {
         final UserInfo record = fakeUserInfo();
         mapper.insertSelective(record);
-
-        session.commit();
     }
 
     @Test
@@ -80,13 +61,11 @@ class UserInfoMapperTest {
     @Test
     void updateByPrimaryKeySelective() {
 
-        session.commit();
     }
 
     @Test
     void updateByPrimaryKey() {
 
-        session.commit();
     }
 
     @Test

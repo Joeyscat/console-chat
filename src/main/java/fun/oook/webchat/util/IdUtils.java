@@ -14,6 +14,6 @@ public final class IdUtils {
     }
 
     public static String longNumericId() {
-        return RandomStringUtils.randomNumeric(20);
+        return RandomStringUtils.randomNumeric(13);
     }
 }
