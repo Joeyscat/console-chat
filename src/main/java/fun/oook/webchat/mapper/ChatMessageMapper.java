@@ -1,9 +1,7 @@
 package fun.oook.webchat.mapper;
 
 import fun.oook.webchat.model.ChatMessage;
-import org.apache.ibatis.annotations.Mapper;
-
-import java.util.List;
+import org.apache.ibatis.annotations.Mapper;import java.util.List;
 
 @Mapper
 public interface ChatMessageMapper {
@@ -15,9 +13,9 @@ public interface ChatMessageMapper {
 
     ChatMessage selectByPrimaryKey(Long id);
 
-    List<ChatMessage> selectAll();
-
     int updateByPrimaryKeySelective(ChatMessage record);
 
     int updateByPrimaryKey(ChatMessage record);
+
+    List<ChatMessage> selectAll();
 }

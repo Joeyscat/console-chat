@@ -26,7 +26,7 @@ public class UserService {
         final String email = register.getEmail();
         final String password = register.getPassword();
 
-        final Long userId = Long.valueOf(IdUtils.longNumericId());
+        final Long userId = IdUtils.longNumericId();
         final UserInfo userInfo = UserInfo.builder()
                 .id(userId)
                 .email(email)

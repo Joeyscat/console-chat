@@ -6,6 +6,7 @@ import fun.oook.webchat.util.IdUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -33,7 +34,7 @@ class UserInfoMapperTest {
 
     private UserInfo fakeUserInfo() {
         return UserInfo.builder()
-                .id(Long.valueOf(IdUtils.longNumericId()))
+                .id(IdUtils.longNumericId())
                 .nickname(faker.name().fullName())
                 .avatar(faker.avatar().image())
                 .email(faker.internet().emailAddress())
@@ -69,6 +70,7 @@ class UserInfoMapperTest {
     }
 
     @Test
+    @Disabled
     void shortId() {
         final int times = 10000000;
         final Map<String, String> map = new HashMap<>(times);

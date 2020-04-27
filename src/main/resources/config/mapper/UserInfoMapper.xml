@@ -1,102 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="fun.oook.webchat.mapper.UserInfoMapper">
-  <resultMap id="BaseResultMap" type="fun.oook.webchat.model.UserInfo">
-    <!--@mbg.generated-->
-    <!--@Table user_info-->
-    <id column="ID" jdbcType="BIGINT" property="id" />
-    <result column="user_code" jdbcType="VARCHAR" property="userCode" />
-    <result column="NICKNAME" jdbcType="VARCHAR" property="nickname" />
-    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
-    <result column="AVATAR" jdbcType="VARCHAR" property="avatar" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    ID, user_code, NICKNAME, EMAIL, AVATAR
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    <!--@mbg.generated-->
-    select 
-    <include refid="Base_Column_List" />
-    from user_info
-    where ID = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    <!--@mbg.generated-->
-    delete from user_info
-    where ID = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="fun.oook.webchat.model.UserInfo">
-    <!--@mbg.generated-->
-    insert into user_info (ID, user_code, NICKNAME, 
-      EMAIL, AVATAR)
-    values (#{id,jdbcType=BIGINT}, #{userCode,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="fun.oook.webchat.model.UserInfo">
-    <!--@mbg.generated-->
-    insert into user_info
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        ID,
-      </if>
-      <if test="userCode != null">
-        user_code,
-      </if>
-      <if test="nickname != null">
-        NICKNAME,
-      </if>
-      <if test="email != null">
-        EMAIL,
-      </if>
-      <if test="avatar != null">
-        AVATAR,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="userCode != null">
-        #{userCode,jdbcType=VARCHAR},
-      </if>
-      <if test="nickname != null">
-        #{nickname,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null">
-        #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="avatar != null">
-        #{avatar,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="fun.oook.webchat.model.UserInfo">
-    <!--@mbg.generated-->
-    update user_info
-    <set>
-      <if test="userCode != null">
-        user_code = #{userCode,jdbcType=VARCHAR},
-      </if>
-      <if test="nickname != null">
+    <resultMap id="BaseResultMap" type="fun.oook.webchat.model.UserInfo">
+        <!--@mbg.generated-->
+        <!--@Table user_info-->
+        <id column="ID" jdbcType="BIGINT" property="id"/>
+        <result column="user_code" jdbcType="VARCHAR" property="userCode"/>
+        <result column="NICKNAME" jdbcType="VARCHAR" property="nickname"/>
+        <result column="EMAIL" jdbcType="VARCHAR" property="email"/>
+        <result column="AVATAR" jdbcType="VARCHAR" property="avatar"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, user_code, NICKNAME, EMAIL, AVATAR
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from user_info
+        where ID = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
+        delete from user_info
+        where ID = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="fun.oook.webchat.model.UserInfo">
+        <!--@mbg.generated-->
+        insert into user_info (ID, user_code, NICKNAME,
+        EMAIL, AVATAR)
+        values (#{id,jdbcType=BIGINT}, #{userCode,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR},
+        #{email,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="fun.oook.webchat.model.UserInfo">
+        <!--@mbg.generated-->
+        insert into user_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="userCode != null">
+                user_code,
+            </if>
+            <if test="nickname != null">
+                NICKNAME,
+            </if>
+            <if test="email != null">
+                EMAIL,
+            </if>
+            <if test="avatar != null">
+                AVATAR,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="userCode != null">
+                #{userCode,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null">
+                #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="avatar != null">
+                #{avatar,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="fun.oook.webchat.model.UserInfo">
+        <!--@mbg.generated-->
+        update user_info
+        <set>
+            <if test="userCode != null">
+                user_code = #{userCode,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null">
+                NICKNAME = #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                EMAIL = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="avatar != null">
+                AVATAR = #{avatar,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="fun.oook.webchat.model.UserInfo">
+        <!--@mbg.generated-->
+        update user_info
+        set user_code = #{userCode,jdbcType=VARCHAR},
         NICKNAME = #{nickname,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null">
         EMAIL = #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="avatar != null">
-        AVATAR = #{avatar,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where ID = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="fun.oook.webchat.model.UserInfo">
-    <!--@mbg.generated-->
-    update user_info
-    set user_code = #{userCode,jdbcType=VARCHAR},
-      NICKNAME = #{nickname,jdbcType=VARCHAR},
-      EMAIL = #{email,jdbcType=VARCHAR},
-      AVATAR = #{avatar,jdbcType=VARCHAR}
-    where ID = #{id,jdbcType=BIGINT}
-  </update>
+        AVATAR = #{avatar,jdbcType=VARCHAR}
+        where ID = #{id,jdbcType=BIGINT}
+    </update>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_info
+    </select>
 </mapper>

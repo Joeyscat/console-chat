@@ -1,7 +1,6 @@
 package fun.oook.webchat.controller;
 
 import fun.oook.webchat.model.ChatMessage;
-import fun.oook.webchat.model.UserInfo;
 import fun.oook.webchat.service.ChatService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -9,8 +8,6 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
 
 
 /**
@@ -27,24 +24,14 @@ public class ChatController {
 
     @MessageMapping("/room1")
     @SendTo("/topic/chat")
-    public ChatMessage chat(final ChatMessage message, final HttpServletRequest req) {
+    public ChatMessage chat(final ChatMessage message, final String token) {
         log.info("/chat : {}", message);
-        final String sessionId = req.getSession().getId();
-        final Long userId = userInfo(sessionId).getId();
 
-        ChatMessage save = new ChatMessage();
-        save.setContent(message.getContent());
-        save.setUserId(userId);
-        save.setCreatedDate(message.getCreatedDate() == null ? new Date(System.currentTimeMillis()) : message.getCreatedDate());
+        chatService.saveMessage(message, token);
 
-        chatService.saveMessage(save);
-
-        return save;
+        return message;
     }
 
-    private UserInfo userInfo(final String sessionId) {
-        return UserInfo.builder().build();
-    }
 
     // todo 加个机器人进来玩
 

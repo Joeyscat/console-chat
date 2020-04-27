@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * @author ZhouYu
+ */
 @Data
 @Builder
 @AllArgsConstructor
@@ -20,4 +23,6 @@ public class ChatMessage {
     private Date createdDate;
 
     private Integer msgType;
+
+    private Integer roomId;
 }

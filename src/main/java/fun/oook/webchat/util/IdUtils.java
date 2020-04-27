@@ -13,7 +13,11 @@ public final class IdUtils {
         return RandomStringUtils.randomAlphanumeric(8);
     }
 
-    public static String longNumericId() {
+    public static Long longNumericId() {
+        return Long.valueOf(RandomStringUtils.randomNumeric(13));
+    }
+
+    public static String numericId() {
         return RandomStringUtils.randomNumeric(13);
     }
 }

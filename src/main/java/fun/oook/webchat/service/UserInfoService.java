@@ -1,9 +1,13 @@
 package fun.oook.webchat.service;
 
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
+
 import fun.oook.webchat.model.UserInfo;
 import fun.oook.webchat.mapper.UserInfoMapper;
+
+import java.util.List;
 
 /**
  * @author ZhouYu
@@ -34,6 +38,9 @@ public class UserInfoService {
         return userInfoMapper.selectByPrimaryKey(id);
     }
 
+    public List<UserInfo> selectAll() {
+        return userInfoMapper.selectAll();
+    }
 
     public int updateByPrimaryKeySelective(UserInfo record) {
         return userInfoMapper.updateByPrimaryKeySelective(record);

@@ -19,11 +19,12 @@ class ChatMessageMapperTest {
     @Test
     void createChatMsg() {
         final ChatMessage msg = ChatMessage.builder()
-                .id(Long.valueOf(IdUtils.longNumericId()))
-                .userId(Long.valueOf(IdUtils.longNumericId()))
+                .id(IdUtils.longNumericId())
+                .userId(IdUtils.longNumericId())
                 .content("Hello")
                 .createdDate(new Date())
                 .msgType(1)
+                .roomId(1)
                 .build();
         final int insert = mapper.insert(msg);
         System.out.println(insert);
@@ -34,7 +35,7 @@ class ChatMessageMapperTest {
     void selectChatMsgList() {
         final List<ChatMessage> chatMessages = mapper.selectAll();
         Assertions.assertNotNull(chatMessages);
-//        chatMessages.forEach(System.out::println);
+        chatMessages.forEach(System.out::println);
     }
 
 
