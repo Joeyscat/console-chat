@@ -51,5 +51,10 @@ public class UserInfoService {
         return userInfoMapper.updateByPrimaryKey(record);
     }
 
+    public UserInfo select(final UserInfo record) {
+        final List<UserInfo> userInfos = userInfoMapper.select(record);
+        // TODO x
+        return userInfos.get(0);
+    }
 }
 

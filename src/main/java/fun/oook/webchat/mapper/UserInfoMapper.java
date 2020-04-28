@@ -20,4 +20,6 @@ public interface UserInfoMapper {
     int updateByPrimaryKey(UserInfo record);
 
     List<UserInfo> selectAll();
+
+    List<UserInfo> select(UserInfo record);
 }

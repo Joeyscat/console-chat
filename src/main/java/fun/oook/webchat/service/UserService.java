@@ -49,6 +49,9 @@ public class UserService {
 
     public UserInfo login(final Login login) {
 
-        return userInfoService.selectByPrimaryKey(login.getUserId());
+        final UserInfo userInfo = UserInfo.builder().email(login.getUsername()).build();
+        final UserInfo existsUser = userInfoService.select(userInfo);
+
+        return existsUser;
     }
 }

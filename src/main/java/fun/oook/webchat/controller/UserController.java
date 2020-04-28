@@ -30,7 +30,7 @@ public class UserController {
     }
 
 
-    @PostMapping("/login")
+//    @PostMapping("/login")
     public ResponseEntity<UserInfo> login(final Login login) {
         final UserInfo userInfo = userService.login(login);
 

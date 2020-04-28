@@ -9,7 +9,7 @@ import lombok.Data;
  */
 @Data
 public class Login {
-    private Long userId;
+    private String username;
 
     private String password;
 }
